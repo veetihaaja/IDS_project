@@ -2,7 +2,7 @@ import json
 import datetime
 import pandas as pd
 
-data = json.load(open('archive.json'))
+data = json.load(open('data/archive.json'))
 
 time = data['timestamps']
 DTtime = [datetime.datetime.fromtimestamp(ts) for ts in time]
@@ -18,4 +18,4 @@ df = pd.DataFrame({
     'Temperature 2 (right pan)': temp2
 })
 
-df.to_csv('processed_data.csv', index=False)
+df.to_csv('data/processed_data.csv', index=False)
